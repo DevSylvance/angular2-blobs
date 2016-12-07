@@ -1,0 +1,9 @@
+<div id="search-component">
+  <h4>Blob Search</h4>
+  <input #searchBox id="search-box" (keyup)="search(searchBox.value)" />
+  <div>
+    <div *ngFor="let blob of blobs | async" (click)="gotoDetail(blob)" class="search-result" >
+      {{blob.blob_name}}
+    </div>
+  </div>
+</div>

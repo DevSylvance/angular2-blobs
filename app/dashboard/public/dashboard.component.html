@@ -1,0 +1,9 @@
+<h3>Recent Blobs</h3>
+<div class="grid grid-pad">
+  <div *ngFor="let blob of blobs" (click)="gotoDetail(blob)" class="col-1-4">
+    <div class="module blob">
+      <h4>{{blob.blob_name}}</h4>
+    </div>
+  </div>
+</div>
+<blob-search></blob-search>

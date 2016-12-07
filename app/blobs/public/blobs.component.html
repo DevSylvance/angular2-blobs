@@ -1,0 +1,22 @@
+<h2>My Blobs</h2>
+<div>
+  <label>Blob name:</label> <input #blobName />
+  <button (click)="add(blobName.value); blobName.value=''">
+    Add
+  </button>
+</div>
+<ul class="blobs">
+  <li *ngFor="let blob of blobs" (click)="onSelect(blob)"
+      [class.selected]="blob === selectedBlob">
+    <span class="badge">{{blob.id}}</span>
+    <span>{{blob.blob_name}}</span>
+    <button class="delete"
+      (click)="delete(blob); $event.stopPropagation()">x</button>
+  </li>
+</ul>
+<div *ngIf="selectedBlob">
+  <h2>
+    {{selectedBlob.blob_name | uppercase}} is a great blob
+  </h2>
+  <button (click)="gotoDetail()">View Details</button>
+</div>

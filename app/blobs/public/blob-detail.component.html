@@ -1,0 +1,14 @@
+<div *ngIf="blob">
+  <h2>{{blob.blob_name}} details!</h2>
+  <div>
+    <label>id: </label>{{blob.id}}</div>
+  <div>
+    <label>name: </label>
+    <input [(ngModel)]="blob.blob_name" placeholder="name" />
+    <br>
+    <label>created: </label>
+    <input [(ngModel)]="blob.created" placeholder="created" />
+   </div>
+  <button (click)="goBack()">Back</button>
+  <button (click)="save()">Save</button>
+</div>
